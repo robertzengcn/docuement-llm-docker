@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  document-python:
+    build: 
+      context: './python/'
+    container_name: document-llm
+    networks:
+      - document-llm-network
+    volumes:
+      - amigaredisdb:/data          
+networks:
+  document-llm-network:
+    ipam:
+      driver: default
+
+
