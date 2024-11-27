@@ -7,7 +7,15 @@ services:
     networks:
       - document-llm-network
     volumes:
-      - amigaredisdb:/data          
+      - ${DOCAPPPATH}:/data 
+  ollama:
+    build: 
+      context: './ollama/'
+    container_name: ollama
+    networks:
+      - document-llm-network
+    volumes:
+      - ${DOCAPPPATH}:/data             
 networks:
   document-llm-network:
     ipam:
