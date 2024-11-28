@@ -2,11 +2,11 @@
 FROM python:3.12-slim
 
 # Set environment variables
-ENV POETRY_VERSION=1.1.11
+#ENV POETRY_VERSION=1.1.11
 
 # Install Poetry
-RUN pip install poetry==$POETRY_VERSION
-
+RUN pip install poetry
+RUN pip install six
 # Set the working directory
 WORKDIR /app
 
@@ -17,13 +17,13 @@ WORKDIR /app
 # RUN poetry install
 
 # # Copy the rest of the application code
-# COPY . /app
+#COPY . /app
 
 # Expose the port your app runs on (if applicable)
 EXPOSE 8000
 
 # Set the entrypoint
-ENTRYPOINT ["poetry", "run"]
+# ENTRYPOINT ["poetry", "run"]
 
 # Command to start the development server (replace with your actual command)
-CMD ["python", "app.py"]
+#CMD ["python", "app.py"]

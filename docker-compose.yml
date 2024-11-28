@@ -1,4 +1,3 @@
-version: "3.2"
 services:
   document-python:
     build: 
@@ -7,7 +6,8 @@ services:
     networks:
       - document-llm-network
     volumes:
-      - ${DOCAPPPATH}:/data 
+      - ${DOCAPPPATH}:/app
+    command: tail -f /dev/null   
   ollama:
     build: 
       context: './ollama/'
