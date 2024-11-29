@@ -7,18 +7,12 @@ services:
       - document-llm-network
     volumes:
       - ${DOCAPPPATH}:/app
-    command: tail -f /dev/null   
-  ollama:
-    build: 
-      context: './ollama/'
-    container_name: ollama
-    networks:
-      - document-llm-network
-    volumes:
-      - ${DOCAPPPATH}:/data             
+    command: tail -f /dev/null               
 networks:
   document-llm-network:
     ipam:
       driver: default
-
+# volumes:
+#   ollamadb:
+#     external: true 
 
