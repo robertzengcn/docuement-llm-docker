@@ -7,12 +7,13 @@ services:
       - document-llm-network
     volumes:
       - ${DOCAPPPATH}:/app
+      - documentllmdb:/root/.cache/pypoetry/virtualenvs
     command: tail -f /dev/null               
 networks:
   document-llm-network:
     ipam:
       driver: default
-# volumes:
-#   ollamadb:
-#     external: true 
+volumes:
+  documentllmdb:
+    external: true 
 
