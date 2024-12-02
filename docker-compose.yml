@@ -5,6 +5,8 @@ services:
     container_name: document-llm
     networks:
       - document-llm-network
+    ports:
+      - "8501:8501"  
     volumes:
       - ${DOCAPPPATH}:/app
       - documentllmdb:/root/.cache/pypoetry/virtualenvs
