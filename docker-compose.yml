@@ -10,7 +10,9 @@ services:
     volumes:
       - ${DOCAPPPATH}:/app
       - documentllmdb:/root/.cache/pypoetry/virtualenvs
-    command: tail -f /dev/null               
+    command: poetry run streamlit run doc_app.py
+    extra_hosts:
+      - "host.docker.internal:host-gateway"              
 networks:
   document-llm-network:
     ipam:
