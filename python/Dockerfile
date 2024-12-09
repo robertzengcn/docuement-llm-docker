@@ -3,7 +3,7 @@ FROM python:3.12.3-slim
 
 # Set environment variables
 #ENV POETRY_VERSION=1.1.11
-RUN apt-get update && apt-get install -y gcc python3-dev
+RUN apt-get update && apt-get install -y gcc python3-dev curl
 # Install Poetry
 RUN pip install poetry
 RUN pip install six
